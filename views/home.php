@@ -55,7 +55,7 @@
                             <form action='children_s_card.php' method='get'>
                                 <td>
                                     <button name='child_first_name' type='submit' class='btn btn-light'>" . $donnees['children_firstname'] . " ". $donnees['children_lastname'] .  "</button>
-                                    <input class='inputid' name='input_child' value=" . $donnees['children_id'] .">
+                                    <input class='invisible' class='inputid' name='input_child' value=" . $donnees['children_id'] .">
                                 </td>
                                 <td>
                                     <pclass='text-right'>informations ></p>
