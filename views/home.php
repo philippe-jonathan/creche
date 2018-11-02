@@ -58,7 +58,7 @@
                                     <input class='invisible' class='inputid' name='input_child' value=" . $donnees['children_id'] .">
                                 </td>
                                 <td>
-                                    <pclass='text-right'>informations ></p>
+                                    <button name='child_first_name' type='submit' class='btn btn-light' class='text-right'>Informations ></button>
                                 </td>
                             </form>
                     </tr>";
