@@ -19,7 +19,9 @@ ini_set('display_errors', 1);
             <form action="home.php" method="POST">
                 <button type="submit" class="order-1 p-2 bd-highlight">home</button>
             </form>
-            <button class="order-2 p-2 bd-highlight">activity</button>
+            <form action="activity.php" method="POST">
+                <button type="submit" class="order-2 p-2 bd-highlight">activity</button>
+            </form>
             </div>
             <div class="d-flex flex-nowrap bd-highlight">
                 <button class="text-left" class="order-2 p-2 bd-highlight" >admin</button>

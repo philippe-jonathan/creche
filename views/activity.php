@@ -10,5 +10,67 @@
 </head>
 <body>
     
+    <div id="navbar">
+        <nav class='navbar navbar-dark bg-dark'>
+            <div class="d-flex flex-nowrap bd-highlight">
+                <form action="home.php" method="POST">
+                    <button type="submit" class="order-1 p-2 bd-highlight">home</button>
+                </form>
+                <form action="activity.php" method="POST">
+                    <button type="submit" class="order-2 p-2 bd-highlight">activity</button>
+                </form>
+            </div>
+            <div class="d-flex flex-nowrap bd-highlight">
+                <button class="text-left" class="order-2 p-2 bd-highlight" >admin</button>
+            </div>
+        </nav>
+    </div>
+
+    <h1 class="text-center">Activity</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col"></th>   
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Number max child</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <?php 
+
+                try {
+                            
+                    $db =new PDO('mysql:host=localhost;dbname=creche_bdd;charset=utf8', 'admin', 'azerty');
+
+                }
+                catch(Exception $e)
+                {
+                    die('Erreur : ' . $e->getMessage());
+                }
+
+                $reponse = $db->query('SELECT * FROM activity');
+                while($donnees=$reponse->fetch()){
+                    echo "<tr>
+                            <th scope='row'></th>
+                            <form action='children_s_card.php' method='get'>
+                                <td>
+                                    <p name='child_first_name'>" . $donnees['activity_name'] . " ". $donnees['children_lastname'] .  "</p>
+                                </td>
+                                <td>
+                                    <p name='child_first_name'>" . $donnees['activity_type'] . "</p> 
+                                </td>
+                                <td>
+                                    <p name'child_first_name'>" . $donnees['activity_number_max_child'] . "</p>
+                                </td>
+                            </form>
+                        </tr>";
+                }
+            ?>
+        </tbody>
+    </table>
 </body>
 </html>
