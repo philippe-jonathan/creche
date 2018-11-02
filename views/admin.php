@@ -1,3 +1,7 @@
+<?php
+    ini_set('display_errors', 1);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +32,7 @@
         </nav>
     </div>
 
-    <h1 class="text-center">Administration</h1>
+    <h1 class="text-center">Administration child</h1>
 
     <table class="table table-striped">
         <thead>
@@ -70,15 +74,25 @@
                                     <form class='text-center' action='add_child.php' method='post'>
                                         <button type='submit' name='add' type='submit' class='btn btn-light'> + </button>
                                     </form>
-                                    <form class='text-center'>
+                                    <form class='text-center' method='post'>
+                                        <input type='hidden' name='children_id' value='" . $donnees['children_id'] . "'>
                                         <button name='delete' type='submit' class='btn btn-light'> - </button>
+                                        <span class='tooltiptext'>click deux fois pour confirmer</span>
                                     </form>
                                     <form class='text-center' action='' method='post'>
                                         <button name='edit' type='submit' class='btn btn-light'>Edit</button>
                                     </form>
                                 </td>
                         </tr>";
-                }
+                }       
+            
+                if(isset($_POST['delete']))
+                {
+                    $id_del = $_POST['children_id'];
+                    //var_dump($id_del);
+                    $db->query("DELETE FROM children WHERE children_id=" . $id_del); 
+                
+                }           
             ?>
 
         </tbody>

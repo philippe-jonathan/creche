@@ -1,3 +1,7 @@
+<?php
+    ini_set('display_errors', 1);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +64,7 @@
                             <th scope='row'></th>
                             <form action='children_s_card.php' method='get'>
                                 <td>
-                                    <p name='child_first_name'>" . $donnees['activity_name'] . " ". $donnees['children_lastname'] .  "</p>
+                                    <p name='child_first_name'>" . $donnees['activity_name'] . "</p>
                                 </td>
                                 <td>
                                     <p name='child_first_name'>" . $donnees['activity_type'] . "</p> 
