@@ -21,12 +21,14 @@
                 </form>
             </div>
             <div class="d-flex flex-nowrap bd-highlight">
-                <button class="text-left" class="order-2 p-2 bd-highlight" >admin</button>
+                <form action="admin.php" method="POST">
+                    <button type="submit" class="text-left" class="order-2 p-2 bd-highlight" >admin</button>
+                </form>
             </div>
         </nav>
     </div>
     
-    <h1 class="text-center">Liste des enfants</h1>
+    <h1 class="text-center">List of children</h1>
 
 <table class="table table-striped">
     <thead>
@@ -67,7 +69,7 @@
                     </tr>";
             }
         ?>
-        
+
     </tbody>
 </table>
 

@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Activity</title>
+    <title>Administartion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
     
@@ -28,15 +28,13 @@
         </nav>
     </div>
 
-    <h1 class="text-center">List of activities</h1>
+    <h1 class="text-center">Administration</h1>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th scope="col"></th>   
                 <th scope="col">Name</th>
-                <th scope="col">Type</th>
-                <th scope="col">Number max child</th>
             </tr>
         </thead>
 
@@ -54,24 +52,24 @@
                     die('Erreur : ' . $e->getMessage());
                 }
 
-                $reponse = $db->query('SELECT * FROM activity');
+                $reponse = $db->query('SELECT * FROM children');
                 while($donnees=$reponse->fetch()){
-                    echo "<tr>
+                    echo 
+                        "<tr>
                             <th scope='row'></th>
-                            <form action='children_s_card.php' method='get'>
-                                <td>
-                                    <p name='child_first_name'>" . $donnees['activity_name'] . " ". $donnees['children_lastname'] .  "</p>
-                                </td>
-                                <td>
-                                    <p name='child_first_name'>" . $donnees['activity_type'] . "</p> 
-                                </td>
-                                <td>
-                                    <p name'child_first_name'>" . $donnees['activity_number_max_child'] . "</p>
-                                </td>
-                            </form>
+                                <form action='children_s_card.php' method='get'>
+                                    <td>
+                                        <button name='child_first_name' type='submit' class='btn btn-light'>" . $donnees['children_firstname'] . " ". $donnees['children_lastname'] .  "</button>
+                                        <input class='invisible' class='inputid' name='input_child' value=" . $donnees['children_id'] .">
+                                    </td>
+                                    <td>
+                                        <button name='child_first_name' type='submit' class='btn btn-light' class='text-right'>Informations ></button>
+                                    </td>
+                                </form>
                         </tr>";
                 }
             ?>
+
         </tbody>
     </table>
 </body>

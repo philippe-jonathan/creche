@@ -24,7 +24,9 @@ ini_set('display_errors', 1);
             </form>
             </div>
             <div class="d-flex flex-nowrap bd-highlight">
-                <button class="text-left" class="order-2 p-2 bd-highlight" >admin</button>
+                <form action="admin.php" method="POST">
+                    <button type="submit" class="text-left" class="order-2 p-2 bd-highlight" >admin</button>
+                </form>
             </div>
         </nav>
     </div>
