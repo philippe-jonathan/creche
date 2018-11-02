@@ -70,7 +70,7 @@ ini_set('display_errors', 1);
                 <th scope='row'></th>
                     <form action='children_s_card.php' method='get'>
                         <td>
-                            <p name='child_first_name'>" . $donnees['children_firstname'] . " ". $donnees['children_lastname'] .  "</p>
+                            <p name='child_first_name'>" . $donnees['children_firstname'] . "</p>
                         </td>
                         <td>
                             <p name='child_first_name'>" . $donnees['children_lastname'] . "</p> 

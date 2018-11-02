@@ -21,8 +21,8 @@
                 </form>
             </div>
             <div class="d-flex flex-nowrap bd-highlight">
-                <form action="admin.php" method="POST">
-                    <button type="submit" class="text-left" class="order-2 p-2 bd-highlight" >admin</button>
+                <form action="admin_activity.php" method="POST">
+                    <button type="submit" class="text-left" class="order-2 p-2 bd-highlight" >admin activity</button>
                 </form>
             </div>
         </nav>
@@ -66,6 +66,17 @@
                                         <button name='child_first_name' type='submit' class='btn btn-light' class='text-right'>Informations ></button>
                                     </td>
                                 </form>
+                                <td>
+                                    <form class='text-center' action='add_child.php' method='post'>
+                                        <button type='submit' name='add' type='submit' class='btn btn-light'> + </button>
+                                    </form>
+                                    <form class='text-center'>
+                                        <button name='delete' type='submit' class='btn btn-light'> - </button>
+                                    </form>
+                                    <form class='text-center' action='' method='post'>
+                                        <button name='edit' type='submit' class='btn btn-light'>Edit</button>
+                                    </form>
+                                </td>
                         </tr>";
                 }
             ?>
